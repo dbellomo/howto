@@ -6,16 +6,29 @@
   <meta name="generator" content="pandoc" />
   <title></title>
   <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="stylesheet.css" type="text/css" />
+  <link rel="stylesheet" href="pygment_trac.css" type="text/css" />
 </head>
 <body>
+<h1 id="howto">HowTo</h1>
+<h2 id="howto-use-githun-pages">Howto use githun pages</h2>
 <p><a href="http://kris.shaffermusic.com/2013/09/publishing-with-github-pages">Publishing with GitHub pages</a></p>
-<p>$ git clone git@github.com:kshaffer/GHbook.git<br />$ cd GHbook<br />$ git branch<br />$ git checkout gh-pages</p>
-<p>If gh-pages is not listed, create it by typing: $ git branch gh-pages<br />$ git checkout gh-pages</p>
-<p>$ cat REDME.md<br /><a href="chapter1.html">Chapter 1: Introduction to GitHub Pages.</a></p>
+<pre><code>$ git clone git@github.com:kshaffer/GHbook.git
+$ cd GHbook
+$ git branch
+$ git checkout gh-pages</code></pre>
+<p>If gh-pages is not listed, create it by typing: $ git branch gh-pages $ git checkout gh-pages $ cat REDME.md</p>
+<p><a href="chapter1.html">Chapter 1: Introduction to GitHub Pages.</a></p>
 <p>Editing and publishing</p>
-<p>$ pandoc github.md -f markdown -t html -s -o github.html<br />$ git add .<br />$ git commit -am 'some message here so you can keep track of changes'<br />$ git push origin gh-pages</p>
+<pre><code>$ pandoc github.md -c stylesheet.css -c pygment_trac.css -f markdown -t html -s -o github.html
+$ git add .
+$ git commit -am &#39;some message here so you can keep track of changes&#39;
+$ git push origin gh-pages</code></pre>
 <p>This pushes all your changes to GitHub.</p>
 <p>Assuming there are some changes needed, simply make them on your computer, and then repeat the above procedure to push the changes to GitHub.</p>
-<p>$ git add .<br />$ git commit -am 'some message here so you can keep track of changes'<br />$ git push origin gh-pages</p>
+<pre><code>$ git add .
+$ git commit -am &#39;some message here so you can keep track of changes&#39;
+$ git push origin gh-pages</code></pre>
+<p><a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a></p>
 </body>
 </html>
