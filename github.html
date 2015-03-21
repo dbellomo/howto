@@ -4,23 +4,25 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
-  <title></title>
+  <title>GitHub Page HowTo - </title>
   <style type="text/css">code{white-space: pre;}</style>
   <link rel="stylesheet" href="stylesheet.css" type="text/css" />
   <link rel="stylesheet" href="pygment_trac.css" type="text/css" />
 </head>
 <body>
 <h1 id="howto">HowTo</h1>
-<h2 id="howto-use-githun-pages">Howto use githun pages</h2>
-<p><a href="http://kris.shaffermusic.com/2013/09/publishing-with-github-pages">Publishing with GitHub pages</a></p>
+<h2 id="howto-use-github-pages">Howto use GitHub pages</h2>
 <pre><code>$ git clone git@github.com:kshaffer/GHbook.git
 $ cd GHbook
 $ git branch
 $ git checkout gh-pages</code></pre>
-<p>If gh-pages is not listed, create it by typing: $ git branch gh-pages $ git checkout gh-pages $ cat REDME.md</p>
-<p><a href="chapter1.html">Chapter 1: Introduction to GitHub Pages.</a></p>
+<p>If gh-pages is not listed, create it by typing:</p>
+<pre><code>$ git branch gh-pages
+$ git checkout gh-pages
+$ cat REDME.md
+[Chapter 1: Introduction to GitHub Pages.](chapter1.html)</code></pre>
 <p>Editing and publishing</p>
-<pre><code>$ pandoc github.md -c stylesheet.css -c pygment_trac.css -f markdown -t html -s -o github.html
+<pre><code>$ pandoc github.md -c stylesheet.css -c pygment_trac.css -f markdown -t html -T &quot;GitHub Page HowTo&quot; -s -o github.html
 $ git add .
 $ git commit -am &#39;some message here so you can keep track of changes&#39;
 $ git push origin gh-pages</code></pre>
@@ -29,6 +31,16 @@ $ git push origin gh-pages</code></pre>
 <pre><code>$ git add .
 $ git commit -am &#39;some message here so you can keep track of changes&#39;
 $ git push origin gh-pages</code></pre>
+<p>Go to page</p>
+<p>https://user.github.io/howto/github.html</p>
+<p>Using Makefile</p>
+<pre><code>$ cat Makefile
+%.html: %.md stylesheet.css pygment_trac.css Makefile
+    pandoc -c stylesheet.css -c pygment_trac.css -f markdown -t html -T &quot;GitHub Page HowTo&quot; -s -o $@ $&lt;
+
+$ make github.html</code></pre>
+<p>Ref</p>
+<p><a href="http://kris.shaffermusic.com/2013/09/publishing-with-github-pages">Publishing with GitHub pages</a><br /><a href="http://brizzled.clapper.org/blog/2010/11/26/writing-markdown-and-pandoc">Writing, Markdown and Pandoc</a></p>
 <p><a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a></p>
 </body>
 </html>
