@@ -1,2 +1,0 @@
-# howto
-HowTos varios
