@@ -5,3 +5,8 @@
 
 ## GitHub
 [GitHub Pages](github_pages.html)
+
+## Python
+### Tutoriales
+[A Crash Course in Python for Scientists](http://nbviewer.ipython.org/gist/rpmul
+ler/5920182)
